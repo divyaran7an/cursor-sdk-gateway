@@ -1,0 +1,59 @@
+{
+  "name": "cursor-sdk-gateway",
+  "version": "0.1.0",
+  "description": "Use your own model API with @cursor/sdk local agents.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Divya",
+  "homepage": "https://github.com/divyaran7an/cursor-sdk-gateway",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/divyaran7an/cursor-sdk-gateway.git"
+  },
+  "bugs": {
+    "url": "https://github.com/divyaran7an/cursor-sdk-gateway/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "cursor",
+    "cursor-sdk",
+    "agents",
+    "ai-sdk",
+    "vercel-ai-gateway",
+    "openai-compatible",
+    "deepseek",
+    "anthropic",
+    "openai"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "src",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/parity.mjs"
+  },
+  "dependencies": {
+    "@ai-sdk/openai-compatible": "^2.0.43",
+    "ai": "^6.0.171",
+    "zod": "^4.4.1"
+  },
+  "peerDependencies": {
+    "@cursor/sdk": ">=1.0.7 <2"
+  },
+  "devDependencies": {
+    "@cursor/sdk": "^1.0.11"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
