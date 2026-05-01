@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/divyaran7an/cursor-sdk-gateway/main/assets/hero.png" alt="Cursor SDK Gateway — use any LLM with the Cursor Agent SDK" width="800">
+</p>
+
 # Cursor SDK Gateway
 
 [![npm version](https://img.shields.io/npm/v/cursor-sdk-gateway.svg)](https://www.npmjs.com/package/cursor-sdk-gateway)
