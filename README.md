@@ -8,7 +8,7 @@
 [![Downloads](https://img.shields.io/npm/dm/cursor-sdk-gateway.svg)](https://www.npmjs.com/package/cursor-sdk-gateway)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#license)
 
-The Cursor Agent SDK is great, but every request routes through Cursor's backend and needs a Cursor API key. This is a small library that lets you point it at any provider you want, like DeepSeek, Kimi, OpenRouter, Vercel AI Gateway, LiteLLM, vLLM, or any OpenAI-compatible endpoint.
+The Cursor Agent SDK is great, but every request routes through Cursor's backend and needs a Cursor API key. This is a small library that lets you point it at any OpenAI-compatible provider through the Vercel AI SDK instead.
 
 Your code keeps using `@cursor/sdk`, the local executor still runs all the tools the same way, and only the model call goes somewhere else.
 
@@ -170,7 +170,7 @@ Existing code that passes `apiKey: process.env.CURSOR_API_KEY` keeps working. Fo
 
 ## Features
 
-- Use any provider you already have a key for, including Vercel AI Gateway, OpenRouter, LiteLLM, vLLM, LocalAI, or any OpenAI-compatible endpoint.
+- Use any provider you already have a key for, through Vercel AI Gateway or any OpenAI-compatible endpoint.
 - Drop into any existing `@cursor/sdk` app with one config call before the SDK import.
 - All Cursor local file and shell tools keep working: `write`, `edit`, `read`, `ls`, `grep`, `glob`, `delete`, `shell`.
 - MCP servers, project hooks, subagents, and background shell with `write_shell_stdin` all run as normal.
@@ -219,7 +219,7 @@ Stack:
 
 - `@cursor/sdk` for the public API your app imports
 - `ai` for streaming via `streamText` and Vercel AI Gateway
-- `@ai-sdk/openai-compatible` for OpenRouter, LiteLLM, vLLM, LocalAI, and private endpoints
+- `@ai-sdk/openai-compatible` for OpenAI-compatible endpoints
 - `zod` for model-facing tool schemas
 
 ## References
