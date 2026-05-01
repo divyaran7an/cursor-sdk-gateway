@@ -15,7 +15,11 @@ const agent = await Agent.create({
   },
 })
 
-const run = await agent.send("Use the demo-writer subagent to create demo-output/subagent.txt with one sentence about BYOM for Cursor SDK.")
+const run = await agent.send([
+  "Use the `task` tool to delegate to the `demo-writer` subagent.",
+  "Tell the subagent to create `demo-output/subagent.txt` with one short sentence about bringing your own model to the Cursor SDK.",
+  "After the subagent finishes, confirm the file was written.",
+].join("\n"))
 await printAssistantStream(run)
 
 await agent[Symbol.asyncDispose]()

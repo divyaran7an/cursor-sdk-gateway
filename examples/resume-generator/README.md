@@ -23,6 +23,12 @@ node examples/resume-generator/run.mjs "Linus Torvalds" \
 
 ## Run it
 
+Install:
+
+```bash
+npm install cursor-sdk-gateway @cursor/sdk
+```
+
 Set a provider:
 
 ```bash

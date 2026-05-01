@@ -69,6 +69,12 @@ Delete the `configureCursorGateway()` call and switch back to a Cursor model id.
 
 If a file in your project already imports `@cursor/sdk`, put the gateway setup in your entrypoint before that import. The setup has to run first.
 
+## If something doesn't work
+
+- **It still routes through Cursor's models.** Make sure `configureCursorGateway()` runs *before* anything imports `@cursor/sdk`. The dynamic-import pattern in step 1 handles this.
+- **`@cursor/sdk` not found.** It's a peer dependency, install it explicitly: `npm install @cursor/sdk`.
+- **The provider rejects the request.** The endpoint must support OpenAI-compatible streaming with tool and function calls. Plain chat-only models won't drive the agent loop.
+
 ## Vercel AI Gateway
 
 ```bash
@@ -185,9 +191,10 @@ node examples/hooks/run.mjs
 node examples/subagents/run.mjs
 node examples/background-shell/run.mjs
 node examples/resume-generator/run.mjs "Person Name"
+node examples/cursor-cookbook/quickstart/run.mjs
 ```
 
-`resume-generator` is adapted from Anthropic's [Claude Agent SDK demos](https://github.com/anthropics/claude-agent-sdk-demos/tree/main/resume-generator), with the same workflow swapped to `@cursor/sdk` and `cursor-sdk-gateway`.
+`resume-generator` is adapted from Anthropic's [Claude Agent SDK demos](https://github.com/anthropics/claude-agent-sdk-demos/tree/main/resume-generator), with the same workflow swapped to `@cursor/sdk` and `cursor-sdk-gateway`. The `cursor-cookbook/` folder ports a few of [Cursor's own cookbook examples](https://github.com/cursor/cookbook/tree/main/sdk) the same way.
 
 See [`examples/README.md`](./examples/README.md) for setup and a one-line summary of each.
 
@@ -210,6 +217,13 @@ Stack:
 - `ai` for streaming via `streamText` and Vercel AI Gateway
 - `@ai-sdk/openai-compatible` for OpenRouter, LiteLLM, vLLM, LocalAI, and private endpoints
 - `zod` for model-facing tool schemas
+
+## References
+
+- Cursor's SDK announcement: https://cursor.com/blog/typescript-sdk
+- Cursor SDK docs: https://cursor.com/docs/sdk/typescript
+- `@cursor/sdk` on npm: https://www.npmjs.com/package/@cursor/sdk
+- Cursor's official cookbook: https://github.com/cursor/cookbook
 
 ## Disclaimer
 

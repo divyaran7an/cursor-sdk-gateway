@@ -2,6 +2,12 @@
 
 Each example is a normal `@cursor/sdk` local agent. The only extra setup is one call to `configureCursorGateway()` before importing `@cursor/sdk`, and then everything else is the same Cursor SDK API you already know.
 
+## Install
+
+```bash
+npm install cursor-sdk-gateway @cursor/sdk
+```
+
 ## Setup
 
 Set a provider before running any example.
@@ -31,6 +37,8 @@ node examples/hooks/run.mjs
 node examples/subagents/run.mjs
 node examples/background-shell/run.mjs
 node examples/resume-generator/run.mjs "Person Name"
+node examples/cursor-cookbook/quickstart/run.mjs
+node examples/cursor-cookbook/coding-agent-cli/run.mjs
 ```
 
 ## What each one shows
@@ -44,6 +52,7 @@ node examples/resume-generator/run.mjs "Person Name"
 | `subagents/` | Parent agent delegating to a named subagent |
 | `background-shell/` | Long-running shell with `write_shell_stdin` |
 | `resume-generator/` | Multi-tool flow: `fetch` + `shell` + `write` to produce a real `.docx` |
+| `cursor-cookbook/` | Ports of [Cursor's official cookbook examples](https://github.com/cursor/cookbook/tree/main/sdk) routed through the gateway |
 
 ## Attribution
 
