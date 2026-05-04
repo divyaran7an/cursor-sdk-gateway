@@ -27,6 +27,12 @@ export OPENAI_COMPATIBLE_API_KEY="..."
 export CURSOR_MODEL="deepseek/deepseek-v4-flash"
 ```
 
+Or [Darkbloom](https://darkbloom.dev) by Eigen Labs — used only by [`examples/darkbloom/`](./darkbloom):
+
+```bash
+export DARKBLOOM_API_KEY="eigeninference-..."
+```
+
 ## Run
 
 ```bash
@@ -39,6 +45,7 @@ node examples/background-shell/run.mjs
 node examples/resume-generator/run.mjs "Person Name"
 node examples/cursor-cookbook/quickstart/run.mjs
 node examples/cursor-cookbook/coding-agent-cli/run.mjs
+node --env-file=examples/darkbloom/.env examples/darkbloom/run.mjs
 ```
 
 ## What each one shows
@@ -53,6 +60,7 @@ node examples/cursor-cookbook/coding-agent-cli/run.mjs
 | `background-shell/` | Long-running shell with `write_shell_stdin` |
 | `resume-generator/` | Multi-tool flow: `fetch` + `shell` + `write` to produce a real `.docx` |
 | `cursor-cookbook/` | Ports of [Cursor's official cookbook examples](https://github.com/cursor/cookbook/tree/main/sdk) routed through the gateway |
+| `darkbloom/` | Terminal chat against [Darkbloom](https://darkbloom.dev) by Eigen Labs — decentralized inference on hardware-attested Apple Silicon |
 
 ## Attribution
 
