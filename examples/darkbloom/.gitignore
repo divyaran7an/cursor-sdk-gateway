@@ -1,0 +1,6 @@
+# Local secrets — never commit
+.env
+.env.local
+
+# Anything the example writes at runtime
+out/
